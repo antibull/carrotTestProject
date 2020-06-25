@@ -7,7 +7,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static endpoints.LoginPageEndPoints.loginPageURL;
 
 public abstract class BasePage {
     public WebDriver driver;
@@ -22,18 +21,15 @@ public abstract class BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    //Click method
     public void click (WebElement element){
         element.click();
     }
 
-    //Write text
     public void writeText(WebElement element, String text){
         element.clear();
         element.sendKeys(text);
     }
 
-    //Read text
     public String readText(WebElement element){
         return element.getText();
     }
